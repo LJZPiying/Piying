@@ -28,9 +28,9 @@
         <div class="section" id="sec_index">
             <div class="stage">
                 <ul>
-                    <li><img src="image/demo.png" /></li>
-                    <li><img src="image/demo.png" /></li>
-                    <li><img src="image/demo.png" /></li>
+                    <li><img src="image/demo.png" title="地图" id="btn_map" /></li>
+                    <li><img src="image/demo.png" title="图片" id="btn_pic" /></li>
+                    <li><img src="image/demo.png" title="视频" id="btn_mov" /></li>
                 </ul>
             </div>
         </div>
@@ -66,13 +66,28 @@
     <script type="text/javascript" src="vendor/jquery/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="vendor/fullpage/js/jquery.fullPage.js"></script>
 
-    <!-- 页面初始化 -->
+    <!-- 页面JS -->
     <script type="text/javascript">
         $(document).ready(function () {
+            /* 初始化 FullPage */
             $('#page').fullpage({
                 anchors: ['main', 'map', 'pic', 'mov'],
                 sectionsColor: ['#449d44', '#5bc0de', '#ec971f', '#c9302c'],
-                css3: true
+                css3: true,
+                keyboardScrolling: false
+            });
+
+            /* 首页图片点击事件 */
+            $("#btn_map").click(function() {
+                $.fn.fullpage.moveTo(2);
+            });
+
+            $("#btn_pic").click(function() {
+                $.fn.fullpage.moveTo(3);
+            });
+
+            $("#btn_mov").click(function() {
+                $.fn.fullpage.moveTo(4);
             });
         });
     </script>
