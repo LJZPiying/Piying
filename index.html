@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap + FullPage 框架</title>
+    <title>皮影印象</title>
     <meta name="author" content="张政 江珊 廖星">
     <meta name="description" content="皮影：FullPage + Bootstrap 框架">
 
@@ -13,20 +13,23 @@
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="vendor/fullpage/css/jquery.fullPage.css">
     <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link href="css/csshake.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
     <div class="navbar-top navbar navbar-default navbar-fixed-top" id="navbar">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">皮影</a>
+                <a class="navbar-brand" href="#">皮影印象</a>
             </div>
+            <div class="shake shake-slow"><img src=image/shake.png></div>
         </div>
     </div>
     <div id="page">
         <!-- 首页 -->
         <div class="section" id="sec_index">
             <div class="stage">
+                
                 <ul>
                     <li><img src="image/demo.png" title="地图" id="btn_map" /></li>
                     <li><img src="image/demo.png" title="图片" id="btn_pic" /></li>
@@ -38,6 +41,7 @@
         <div class="section" id="sec_map">
             <div class="stage">
                 <h1>地图</h1>
+                <img src="image/demo.png" title="地图" id="btn_map1" />
             </div>
         </div>
         <!-- 图片 -->
@@ -45,6 +49,7 @@
             <div class="slide" id="img1">
                 <div class="stage">
                     <h1>图片1</h1>
+                    <img src="image/demo.png" title="图片" id="btn_pic1" />
                 </div>
             </div>
             <div class="slide" id="img2">
@@ -57,6 +62,7 @@
         <div class="section" id="sec_mov">
             <div class="stage">
                 <h1>视频</h1>
+                <img src="image/demo.png" title="视频" id="btn_mov1" />
             </div>
         </div>
     </div>
@@ -65,7 +71,7 @@
     <script type="text/javascript" src="vendor/jquery/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="vendor/jquery/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="vendor/fullpage/js/jquery.fullPage.js"></script>
-
+    
     <!-- 页面JS -->
     <script type="text/javascript">
         $(document).ready(function () {
@@ -74,22 +80,66 @@
                 anchors: ['main', 'map', 'pic', 'mov'],
                 sectionsColor: ['#449d44', '#5bc0de', '#ec971f', '#c9302c'],
                 css3: true,
-                keyboardScrolling: false
+                keyboardScrolling: false,
+				scrollingSpeed:600,
+				 
             });
-
+			/*禁止鼠标滑动后屏幕滚动*/
+            $.fn.fullpage.setAllowScrolling(false); 
+			
+			
             /* 首页图片点击事件 */
             $("#btn_map").click(function() {
-                $.fn.fullpage.moveTo(2);
+               
+				$.fn.fullpage.moveTo(2); 
+				easing:'easeInOutCirc'  
             });
-
+            $("#btn_map1").click(function() {
+              
+				$.fn.fullpage.moveTo(1);
+				easing:'easeInOutCirc'   
+            });
             $("#btn_pic").click(function() {
                 $.fn.fullpage.moveTo(3);
+				easing:'easeInOutCirc'
+            });
+            $("#btn_pic1").click(function() {
+                $.fn.fullpage.moveTo(1);
+				easing:'easeInOutCirc'
             });
 
             $("#btn_mov").click(function() {
                 $.fn.fullpage.moveTo(4);
+				easing:'easeInOutCirc'
             });
+			 $("#btn_mov1").click(function() {
+                $.fn.fullpage.moveTo(1);
+				easing:'easeInOutCirc'
+            });
+			
+            /*首页三个icon进入的动画效果*/
+            $("#btn_map").animate({
+                  left:'25%',
+				  easing:'easeInOutCirc',
+				  duration:1000
+            });    
+            $("#btn_pic").animate({
+                  left:'45%',
+				  easing:'easeInOutCirc',
+				  duration:1000
+            }); 
+            $("#btn_mov").animate({
+                  left:'65%',
+				  easing:'easeInOutCirc',
+				  duration:1000
+            }); 
         });
+		
+		
+
+
+
+	
     </script>
 
 </body>
