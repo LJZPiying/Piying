@@ -12,7 +12,8 @@
          left:-700px;
 		 -webkit-transition-duration:2s;
 		 transition-duration:2s;
-		 -moz-transition-duration:2s;}
+		 -moz-transition-duration:2s;
+		 }
 #btn_mov{position:absolute;
          left:-500px;
 		 -webkit-transition-duration:3s;
@@ -49,4 +50,7 @@
          -webkit-background-size:100% 100%;
 		 background-size:100% 100%;
 		 -moz-background-size:100% 100%;}
-		 
+#btn_map1{top:-25%;
+          display:none;
+		  position:absolute;
+		  left:25%; }		 

@@ -13,11 +13,14 @@
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="vendor/fullpage/css/jquery.fullPage.css">
     <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/fakeloader.css">
     <link href="css/csshake.min.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
+    <div class="fakeloader"></div>
     <div class="navbar-top navbar navbar-default navbar-fixed-top" id="navbar">
+       
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">皮影印象</a>
@@ -25,6 +28,7 @@
             <div class="shake shake-slow"><img src=image/shake.png></div>
         </div>
     </div>
+    
     <div id="page">
         <!-- 首页 -->
         <div class="section" id="sec_index">
@@ -39,9 +43,10 @@
         </div>
         <!-- 地图 -->
         <div class="section" id="sec_map">
+            <div class="imgs"><img src="image/demo.png" title="地图" id="btn_map1" /></div>
             <div class="stage">
                 <h1>地图</h1>
-                <img src="image/demo.png" title="地图" id="btn_map1" />
+                
             </div>
         </div>
         <!-- 图片 -->
@@ -71,17 +76,26 @@
     <script type="text/javascript" src="vendor/jquery/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="vendor/jquery/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="vendor/fullpage/js/jquery.fullPage.js"></script>
+    <script src="js/fakeloader.min.js"></script>
     
     <!-- 页面JS -->
     <script type="text/javascript">
+	     $(document).ready(function(){
+                $(".fakeloader").fakeLoader({
+                    timeToHide:1200,
+                    bgColor:"#767256",
+                    spinner:"spinner2"
+                });
+            });
         $(document).ready(function () {
+			
             /* 初始化 FullPage */
             $('#page').fullpage({
                 anchors: ['main', 'map', 'pic', 'mov'],
                 sectionsColor: ['#449d44', '#5bc0de', '#ec971f', '#c9302c'],
                 css3: true,
                 keyboardScrolling: false,
-				scrollingSpeed:600,
+				scrollingSpeed:850,
 				 
             });
 			/*禁止鼠标滑动后屏幕滚动*/
@@ -90,16 +104,43 @@
 			
             /* 首页图片点击事件 */
             $("#btn_map").click(function() {
-               
-				$.fn.fullpage.moveTo(2); 
-				easing:'easeInOutCirc'  
-            });
+                $("#btn_map").hide();
+				$("#btn_map1").show();
+				$("#sec_map").show();
+				$("#sec_pic").show();
+			    $("#btn_map1").animate({
+                  top:'70%',
+				  timeToHide:250,
+				  easing:'easeInOutExpo',
+				  duration:100
+				 }).animate({top:'50%',
+				            easing:'easeInOutExpo',
+				            duration:300})
+					.animate({top:'70%',
+					 easing:'easeInOutExpo',
+				            duration:500}) 
+				 
+			   $.fn.fullpage.moveTo(2);    
+               easing:'easeInOutExpo';	
+			  });	           
+            
+          
             $("#btn_map1").click(function() {
               
-				$.fn.fullpage.moveTo(1);
+				 $.fn.fullpage.moveTo(1);
+				 $("#btn_map1").hide();
+				 $("#btn_map1").animate({
+                  top:'-25%',
+				  easing:'easeInOutExpo',
+				   })
+				
+				 $("#btn_map").show();
 				easing:'easeInOutCirc'   
             });
+			
             $("#btn_pic").click(function() {
+				$("#sec_map").hide();
+				$("#sec_pic").show();
                 $.fn.fullpage.moveTo(3);
 				easing:'easeInOutCirc'
             });
@@ -109,6 +150,8 @@
             });
 
             $("#btn_mov").click(function() {
+				$("#sec_map").hide();
+				$("#sec_pic").hide();
                 $.fn.fullpage.moveTo(4);
 				easing:'easeInOutCirc'
             });
@@ -121,26 +164,27 @@
             $("#btn_map").animate({
                   left:'25%',
 				  easing:'easeInOutCirc',
-				  duration:1000
-            });    
+				  duration:700
+            }); 
+			
             $("#btn_pic").animate({
                   left:'45%',
 				  easing:'easeInOutCirc',
-				  duration:1000
+				  duration:700
             }); 
             $("#btn_mov").animate({
                   left:'65%',
 				  easing:'easeInOutCirc',
-				  duration:1000
+				  duration:700
             }); 
         });
-		
+	 </script>
+	
 		
 
 
 
 	
-    </script>
-
+   
 </body>
 </html>
