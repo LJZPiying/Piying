@@ -23,11 +23,12 @@
 <body>
     <div class="container">
         <header id="header" class="codrops-header">
-            <h1>皮影印象</h1>
+            <img src="imgs/LOGO.png">
 
             <span class="message">This mobile version does not have the slideshow switch</span>
+            
             <button class="slider-switch">Switch view</button>
-
+            
         </header>
 
         <div class="fakeloader"></div>
@@ -46,28 +47,42 @@
             <div class="visualNaviItem" data-slide-x="5" data-slide-y="2"></div>
 
         </div>
+        <div class="emerge">
+           <img src="imgs/显示三个 拷贝.png" class="emerge_pre">
+           <img src="imgs/显示三个.png" class="emerge_later">
+        </div>
+        <div id="stage">
+                
+           <ul>
+              <li><a href="#"><img src="imgs/DIY.png" id="img_diy" /></a></li>
+              <li><a href="#"><img src="imgs/卷轴.png" id="img_history" /></a></li>
+              <li><a href="#"><img src="imgs/地图.png"  id="img_map" /></a></li>
+           </ul>
+        </div>
         <div id="slideshow" class="dragslider">
-
+          
             <section class="img-dragger img-dragger-large dragdealer">
                 <div class="handle">
-                    <div class="slide" data-content="content-1">
-                        <div class="img-wrap"><img src="img/1.jpg" alt="img1" /></div>
-                        <h2>Lorem Waldy<span>Distilling design ideas and other interesting topics</span></h2>
+                     <div class="slide" data-content="content-1">
+                       <div class="img-wrap"><img src="imgs/Pic-main-1.jpg" alt="img1" class="main1" />
+                          
+                        </div>
+                        <!--<h2>Lorem Waldy<span>Distilling design ideas and other interesting topics</span></h2>-->
                         <button class="content-switch">Read more</button>
                     </div>
                     <div class="slide" data-content="content-2">
-                        <div class="img-wrap"><img src="img/2.jpg" alt="img2" /></div>
-                        <h2>Round Table <span>King Arthur's creative team techniques</span></h2>
+                        <div class="img-wrap"><img src="imgs/Pic-main-2.jpg" alt="img2" class="main1"/></div>
+                        <!--<h2>Round Table <span>King Arthur's creative team techniques</span></h2>-->
                         <button class="content-switch">Read more</button>
                     </div>
                     <div class="slide" data-content="content-3">
-                        <div class="img-wrap"><img src="img/3.jpg" alt="img3" /></div>
-                        <h2>Taking Sneezes <span>Nothing is out there&mdash;let's try again</span></h2>
+                        <div class="img-wrap"><img src="imgs/Pic-main-3.jpg" alt="img3" class="main1"/></div>
+                        <!--<h2>Taking Sneezes <span>Nothing is out there&mdash;let's try again</span></h2>-->
                         <button class="content-switch">Read more</button>
                     </div>
                     <div class="slide" data-content="content-4">
-                        <div class="img-wrap"><img src="img/4.jpg" alt="img4" /></div>
-                        <h2>Heavy Talks <span>Heated conversations in the back yard</span></h2>
+                        <div class="img-wrap"><img src="imgs/Pic-main-4.jpg" alt="img4" class="main1"/></div>
+                        <!--<h2>Heavy Talks <span>Heated conversations in the back yard</span></h2>-->
                         <button class="content-switch">Read more</button>
                     </div>
                     <div class="slide" data-content="content-5">
@@ -194,6 +209,26 @@
                 else toggle_btn(x);
                 $(this).addClass("active");
             });
+			$(".emerge_pre").click(function() {
+			  
+			   $(".main1").addClass("active");
+			   $("#stage").fadeIn(800);
+			   $("#img_diy").show();
+			   $("#img_history").show();
+			   $("#img_map").show();
+               $(this).hide();
+			   $(".emerge_later").fadeIn(800);
+			  });
+			$(".emerge_later").click(function() {
+			  
+			   $(".main1").removeClass("active");
+			   $("#stage").fadeOut(2000);
+			   $("#img_diy").fadeOut(500);
+			   $("#img_history").fadeOut(500);
+			   $("#img_map").fadeOut(500);
+               $(this).hide();
+			   $(".emerge_pre").fadeIn(800);
+			  });	          	           
             var header = document.getElementById('header')
             switchBtnn = header.querySelector('button.slider-switch'),
             toggleBtnn = function () {
