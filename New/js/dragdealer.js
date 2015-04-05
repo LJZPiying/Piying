@@ -538,10 +538,8 @@ Dragdealer.prototype = {
     }
   },
   callTargetCallback: function () {
-    var pos = slideshow.dd.getStep();
-    $(".visualNaviItem").removeClass("active");
-    $(".visualNaviItem[data-slide-x=" + pos[0] + "][data-slide-y=" + pos[1] + "]").addClass("active");
-
+    
+  
     if (typeof(this.options.callback) == 'function') {
       this.options.callback.call(this, this.value.target[0], this.value.target[1]);
     }

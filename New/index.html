@@ -198,15 +198,19 @@
                 spinner: "spinner2"
             });
             $(".visualNaviItem").click(function () {
+				var cur_x = $(".active").data("slide-x");
                 var cur_y = $(".active").data("slide-y");
                 $(".visualNaviItem").removeClass("active");
                 var x = $(this).data("slide-x");
                 var y = $(this).data("slide-y");
                 if (y == 1) {
                     if (cur_y == 1) slideshow.dd.setStep(x, y);
-                    else toggle_btn(x);
+                    else{toggle_btn(cur_x);slideshow.dd.setStep(x, y);}
                 }
-                else toggle_btn(x);
+                else {if(cur_y==1){slideshow.dd.setStep(x, cur_y);toggle_btn(x);}
+				      else{toggle_btn(cur_x);
+					  slideshow.dd.setStep(x, 1);
+				      toggle_btn(x);}}
                 $(this).addClass("active");
             });
 			$(".emerge_pre").click(function() {
