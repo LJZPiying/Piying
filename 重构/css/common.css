@@ -1,0 +1,47 @@
+html, body {
+    font-size: 16px;
+    font-family: "Segoe UI", "Lucida Grande", Helvetica, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+}
+
+.page {
+    -moz-transition: all 700ms ease;
+    -o-transition: all 700ms ease;
+    -webkit-transition: all 700ms ease;
+    transition: all 700ms ease;
+}
+
+.stage {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.navbar {
+    background-color: transparent;
+    border: none;
+    z-index: 900;
+}
+
+.navbar-bottom {
+    height: 100px;
+}
+
+.navbar-top {
+    height: 150px;
+    padding-top:20px;
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAACWCAYAAADnlhmFAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo0RjMyMDhEQUExRUExMUU0OUM2NEZDMDkzNjJDRkM0QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo0RjMyMDhEQkExRUExMUU0OUM2NEZDMDkzNjJDRkM0QiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjRGMzIwOEQ4QTFFQTExRTQ5QzY0RkMwOTM2MkNGQzRCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjRGMzIwOEQ5QTFFQTExRTQ5QzY0RkMwOTM2MkNGQzRCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+0k5oogAAAJ9JREFUeNrsWEEOgCAM28STH/b1DPUHJVlSilvirdlGWxngZnYbEOf7XSgwUOBAgIeBkZ9RpTRMuKcuZivCFRZDVOafWk8Bo9yjnjEWNwVxuub3qKA1eV4THU6SUOH8SKZn9b1HwRREwolzpkyRl7HvsgEonFK2A/bFfwWF24fCfaZ6rNKSbylEehoKzs/4AT0VONUjFI6W9jEgYewRYAAe0mH31qECwgAAAABJRU5ErkJggg==') repeat-x center top;
+}
+.fp-controlArrow {
+    display: none;
+}
+
+.section {
+    background-size: cover;
+}
+
+#sec_pic {
+    background-image: url(../image/background/pic_index.jpg);
+}
+
+#sec_mov {
+    background-image: url(../image/background/pic_map.jpg);
+}

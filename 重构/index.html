@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>皮影 | 印象</title>
+    <meta name="author" content="张政 江珊 廖星">
+    <meta name="description" content="皮影 | 印象">
+
+    <!-- 外部CSS -->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/fullpage/css/jquery.fullPage.css">
+    <link rel="stylesheet" type="text/css" href="css/navitem.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+</head>
+
+<body>
+    <div class="navbar-top navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><img src="image/logo/logo.png" /></a>
+            </div>
+            <a class="navbar-brand navbar-right" href="#" id="nav_ham"><img src="image/icon/hamburger.png" /></a>
+        </div>
+    </div>
+    <div class="page">
+        <!-- 图片 -->
+        <div class="section" id="sec_pic">
+            <div class="slide" id="img1">
+                <div class="stage">
+                    <h1>图片1</h1>
+                </div>
+            </div>
+            <div class="slide" id="img2">
+                <div class="stage">
+                    <h1>图片2</h1>
+                </div>
+            </div>
+            <div class="slide" id="img3">
+                <div class="stage">
+                    <h1>图片3</h1>
+                </div>
+            </div>
+            <div class="slide" id="img4">
+                <div class="stage">
+                    <h1>图片4</h1>
+                </div>
+            </div>
+            <div class="slide" id="img5">
+                <div class="stage">
+                    <h1>图片5</h1>
+                </div>
+            </div>
+        </div>
+        <!-- 视频 -->
+        <div class="section" id="sec_mov">
+            <div class="slide" id="mov1">
+                <div class="stage">
+                    <h1>视频1</h1>
+                </div>
+            </div>
+            <div class="slide" id="mov2">
+                <div class="stage">
+                    <h1>视频2</h1>
+                </div>
+            </div>
+            <div class="slide" id="mov3">
+                <div class="stage">
+                    <h1>视频3</h1>
+                </div>
+            </div>
+            <div class="slide" id="mov4">
+                <div class="stage">
+                    <h1>视频4</h1>
+                </div>
+            </div>
+            <div class="slide" id="mov5">
+                <div class="stage">
+                    <h1>视频5</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar-bottom navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <div class="navbar-header">
+                <div id="nav_item">
+                    <div class="nav-item active" data-slide-y="1" data-slide-x="0"></div>
+                    <div class="nav-item" data-slide-y="1" data-slide-x="1"></div>
+                    <div class="nav-item" data-slide-y="1" data-slide-x="2"></div>
+                    <div class="nav-item" data-slide-y="1" data-slide-x="3"></div>
+                    <div class="nav-item" data-slide-y="1" data-slide-x="4"></div>
+
+                    <div class="nav-item" data-slide-y="2" data-slide-x="0"></div>
+                    <div class="nav-item" data-slide-y="2" data-slide-x="1"></div>
+                    <div class="nav-item" data-slide-y="2" data-slide-x="2"></div>
+                    <div class="nav-item" data-slide-y="2" data-slide-x="3"></div>
+                    <div class="nav-item" data-slide-y="2" data-slide-x="4"></div>
+                </div>
+            </div>
+            <a class="navbar-brand navbar-right" href="#" id="big_dot"><img src="image/icon/point_in.png" /></a>
+        </div>
+    </div>
+    <!-- 外部JS -->
+    <script type="text/javascript" src="vendor/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="vendor/fullpage/js/jquery.fullPage.js"></script>
+
+    <!-- 页面JS -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            /* 初始化 FullPage */
+            $('.page').fullpage({
+                anchors: ['pic', 'mov'],
+                sectionsColor: ['#141414', '#141414'],
+                css3: true,
+                keyboardScrolling: false,
+                afterLoad: function (anchorLink, index) {
+                    $(".nav-item.active").removeClass("active");
+                    $(".nav-item[data-slide-x=0][data-slide-y=" + index + "]").addClass("active");
+                },
+                afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
+                    $(".nav-item.active").removeClass("active");
+                    $(".nav-item[data-slide-x=" + slideIndex + "][data-slide-y=" + index + "]").addClass("active");
+                }
+            });
+
+            /* 禁用滚动切换 */
+            $.fn.fullpage.setAllowScrolling(false);
+
+            /* 导航点击事件 */
+            $(".nav-item").click(function () {
+                var x = $(this).data("slide-x");
+                var y = $(this).data("slide-y");
+                $.fn.fullpage.moveTo(y, x);
+            });
+
+            /* 右下角点击效果 */
+            var flag = false;
+            $("#big_dot").click(function () {
+                var obj = $(this).find("img");
+                if (flag) {
+                    $(".page").css("-webkit-filter", "none");
+                    obj.fadeOut("fast", function () {
+                        obj.attr("src", "image/icon/point_in.png");
+                        obj.fadeIn("fast");
+                    });
+                    $("#nav_item").fadeIn();
+                    $("#nav_ham").fadeIn();
+                }
+                else {
+                    $("#nav_item").fadeOut();
+                    $("#nav_ham").fadeOut();
+                    $(".page").css("-webkit-filter", "blur(5px)");
+                    obj.fadeOut("fast", function () {
+                        obj.attr("src", "image/icon/point_out.png");
+                        obj.fadeIn("fast");
+                    });
+                }
+                flag = !flag;
+            });
+
+            $("#btn_map").click(function () {
+                $.fn.fullpage.moveTo(2);
+            });
+
+            $("#btn_pic").click(function () {
+                $.fn.fullpage.moveTo(3);
+            });
+
+            $("#btn_mov").click(function () {
+                $.fn.fullpage.moveTo(4);
+            });
+        });
+    </script>
+
+</body>
+</html>
