@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>皮影论坛</title>
+<link rel="stylesheet" type="text/css" href="css/forum.css" />
+
+<!--引入myFocus库--><script type="text/javascript" src="js/mf-pattern/slide3D.js"></script>
+<!--引入风格js文件--><link href="js/mf-pattern/slide3D.css" type="text/css" /><!--引入风格css文件-->
+<script type="text/javascript" src="js/myfocus-2.0.4.min.js"></script>
+
+<script type="text/javascript">
+//设置
+myFocus.set({
+	id:'hot',//ID
+	pattern:'mF_fancy',//风格
+	time:3
+});
+</script>
+
+</head>
+
+<body>
+ <div class="container">
+    <header class="headers">
+       <a href="#"><img src="imgs/LOGO.png" class="logo"></a>
+       <a href="#"><img src="imgs/加号.png"   class="publish"></a>
+       <a href="#"><img src="imgs/登录.png" class="login"></a>
+       <a href="#"><img src="imgs/放大镜.png" class="search"></a>
+    </header>
+    <div class="content">
+       <div id="hot">
+         <div class="pic">
+          <ul>
+           <li><img src="imgs/腾云图.png" ></li>
+           <li><img src="imgs/京剧图像.png" ></li>
+           <li><img src="imgs/京剧图像2.png" ></li>
+          </ul>
+         </div>
+       </div> 
+       <div id="water">
+          <img src="imgs/京剧图像.png" id="img_water">
+          <p>灌水区</p>
+       </div>
+       <div id="profession">
+          <img src="imgs/京剧图像2.png" id="img_profession">
+          <h2>专业区</h2>
+          <p>我爱皮影戏</p>
+       </div>
+       <div class="activity"></div>
+    </div>
+ </div>
+  
+</body>
+</html>
