@@ -10,6 +10,43 @@ html, body {
     transition: all 700ms ease;
 }
 
+.cover {
+    position: absolute;
+    height: 150px;
+    width: 100%;
+    margin-top: 18%;
+    z-index: 999;
+    display: none;
+}
+
+.cover > ul {
+    list-style: none;
+    margin: auto;
+    width: 900px;
+}
+
+.cover > ul > li {
+    float: left;
+    margin-left: 60px;
+    margin-right: 60px;
+    cursor: pointer;
+}
+
+.cover > ul > li > p {
+    text-align: center;
+    font-size: 20px;
+    color: #000;
+    text-shadow: 0 0 6px #fff;
+    margin-top: 10px;
+}
+
+.mohu {
+    -moz-filter: blur(5px);
+    -webkit-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
 .stage {
     width: 80%;
     margin: 0 auto;

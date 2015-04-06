@@ -25,6 +25,13 @@
             <a class="navbar-brand navbar-right" href="#" id="nav_ham"><img src="image/icon/hamburger.png" /></a>
         </div>
     </div>
+    <div class="cover">
+        <ul>
+            <li><img src="image/logo/map.png" id="pic_map" title="地图" /><p>地图</p></li>
+            <li><img src="image/logo/zhou.png" id="pic_zhou" title="卷轴" /><p>卷轴</p></li>
+            <li><img src="image/logo/diy.png" id="pic_diy" title="DIY" /><p>DIY</p></li>
+        </ul>
+    </div>
     <div class="page">
         <!-- 图片 -->
         <div class="section" id="sec_pic">
@@ -110,72 +117,6 @@
     <script type="text/javascript" src="vendor/fullpage/js/jquery.fullPage.js"></script>
 
     <!-- 页面JS -->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            /* 初始化 FullPage */
-            $('.page').fullpage({
-                anchors: ['pic', 'mov'],
-                sectionsColor: ['#141414', '#141414'],
-                css3: true,
-                keyboardScrolling: false,
-                afterLoad: function (anchorLink, index) {
-                    $(".nav-item.active").removeClass("active");
-                    $(".nav-item[data-slide-x=0][data-slide-y=" + index + "]").addClass("active");
-                },
-                afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
-                    $(".nav-item.active").removeClass("active");
-                    $(".nav-item[data-slide-x=" + slideIndex + "][data-slide-y=" + index + "]").addClass("active");
-                }
-            });
-
-            /* 禁用滚动切换 */
-            $.fn.fullpage.setAllowScrolling(false);
-
-            /* 导航点击事件 */
-            $(".nav-item").click(function () {
-                var x = $(this).data("slide-x");
-                var y = $(this).data("slide-y");
-                $.fn.fullpage.moveTo(y, x);
-            });
-
-            /* 右下角点击效果 */
-            var flag = false;
-            $("#big_dot").click(function () {
-                var obj = $(this).find("img");
-                if (flag) {
-                    $(".page").css("-webkit-filter", "none");
-                    obj.fadeOut("fast", function () {
-                        obj.attr("src", "image/icon/point_in.png");
-                        obj.fadeIn("fast");
-                    });
-                    $("#nav_item").fadeIn();
-                    $("#nav_ham").fadeIn();
-                }
-                else {
-                    $("#nav_item").fadeOut();
-                    $("#nav_ham").fadeOut();
-                    $(".page").css("-webkit-filter", "blur(5px)");
-                    obj.fadeOut("fast", function () {
-                        obj.attr("src", "image/icon/point_out.png");
-                        obj.fadeIn("fast");
-                    });
-                }
-                flag = !flag;
-            });
-
-            $("#btn_map").click(function () {
-                $.fn.fullpage.moveTo(2);
-            });
-
-            $("#btn_pic").click(function () {
-                $.fn.fullpage.moveTo(3);
-            });
-
-            $("#btn_mov").click(function () {
-                $.fn.fullpage.moveTo(4);
-            });
-        });
-    </script>
-
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
