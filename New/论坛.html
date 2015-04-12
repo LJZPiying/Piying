@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>皮影论坛</title>
+<link rel="stylesheet" type="text/css" href="css/forum.css" />
+<script src="js/jquery-1.11.1.min.js"></script>
+
+
+
+<script type="text/javascript">
+//设置
+
+
+$(document).ready(function(){
+$("#search").click(function (){
+  $("#search_box").show(700);
+});
+
+});
+
+</script>
+
+</head>
+
+<body>
+ <div class="container">
+    <header class="headers">
+       <a href="#"><img src="imgs/LOGO.png" class="logo"></a>
+       <a href="#"><img src="imgs/加号.png"   class="publish"></a>
+       <a href="#"><img src="imgs/登录.png" class="login"></a>
+       <a href="#"><img src="imgs/放大镜.png" id="search"></a>
+       <input id="search_box">
+    </header>
+    <div class="content">
+       <div class="slider">
+	     <div class="slider-container">
+		   <div class="slider-wrapper">
+			<div class="slide"> <img src="img/index2.jpg"> </div>
+			<div class="slide"> <img src="img/index4-1.jpg"></div>
+			<div class="slide"> <img src="img/index4-2.jpg"> </div>
+			<div class="slide"> <img src="imgs/腾云图.png"> </div>
+		   </div>
+	      </div>
+        </div>
+        <div id="water">
+          <img src="imgs/京剧图像.png" id="img_water">
+          <p>灌水区</p>
+       </div>
+       <div id="profession">
+          <img src="imgs/京剧图像2.png" id="img_profession">
+          <h2>专业区</h2>
+          <p>我爱皮影戏</p>
+       </div>
+       <div class="activity"></div>
+    </div>
+ </div>
+ 
+<script src="js/jquery-1.8.3.min.js"></script> 
+<script src="js/slider.js"></script> 
+
+<script type="text/javascript">
+	(function() {
+		Slider.init({
+			target: $('.slider'),
+			time: 6000
+		});
+	})();
+</script> 
+</body>
+</html>
