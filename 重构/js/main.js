@@ -5,10 +5,12 @@
 
     /* 初始化 FullPage */
     $(".page").fullpage({
-        anchors: ['pic', 'mov', 'forum', 'history'],
+        anchors: ['pic', 'mov', 'history', 'forum'],
         sectionsColor: ['#141414', '#141414', '#141414', '#141414'],
         css3: true,
         keyboardScrolling: false,
+        animateAnchor: false,
+        scrollingSpeed: 0,
         afterLoad: function (anchorLink, index) {
             current_page = index;
             /* 左下角切换 */
@@ -19,15 +21,17 @@
                 $(".navbar-top").css("background", "none");
                 nav_toggle(false);
                 nav_inverse(false);
-                if (index == 3) forum_toggle(true);
+                if (index == 4) forum_toggle(true);
             }
         },
-        onLeave: function(index, nextIndex, direction) {
+        onLeave: function (index, nextIndex, direction) {
             /* 导航切换 */
-            if (nextIndex < 3) {
-                $(".navbar-top").css("background", "transparent url(../image/shadow.png) repeat-x center top");
-                nav_toggle(true);
-                nav_inverse(true);
+            if (nextIndex < 4) {
+                if (nextIndex < 3) {
+                    $(".navbar-top").css("background", "transparent url(../image/shadow.png) repeat-x center top");
+                    nav_toggle(true);
+                    nav_inverse(true);
+                }
                 forum_toggle(false);
             }
         },
@@ -38,7 +42,7 @@
     });
 
     /* 禁用滚动切换 */
-    //$.fn.fullpage.setAllowScrolling(false);
+    $.fn.fullpage.setAllowScrolling(false);
 
     /* 初始化DragSlideShow */
     slideshow = new DragSlideshow(document.getElementById('slideshow'), {
@@ -112,15 +116,18 @@
             $(".page").hide();
             nav_toggle(false);
             nav_inverse(true);
+            forum_toggle(false);
         }
         else {
             setTimeout(function () {
                 $(".page").show();
+                $.fn.fullpage.moveTo($(".current").index() + 1);
                 hideElem("#slideshow");
             }, 640);
             $(".page").css("z-index", ++current_z_index);
             if (current_page > 2) nav_inverse(false);
             else nav_toggle(true);
+            if (current_page == 4) forum_toggle(true);
         }
         ham_flag = !ham_flag;
     };
@@ -143,16 +150,27 @@
     $("#nav_add").click(function () {
         $("#publish").modal("show");
     });
+
+    $('#slide_history').on('slid.bs.carousel', function () {
+        $("#slide_history > .carousel-indicators > li:not(.active)").each(function (index, value) {
+            var img = $(this).find("img");
+            if (img.attr("src").indexOf("-hover") > 0) img.animate({ "padding-bottom": "-60px" }, 600).attr("src", img.attr("src").split("-")[0] + ".png");
+        });
+        var obj = $("#slide_history > .carousel-indicators > .active > img");
+        obj.animate({ "padding-bottom": "60px" }, 600).attr("src", obj.attr("src").split(".")[0] + "-hover.png");
+    })
 });
 
 function nav_toggle(flag) {
     if (flag) {
         $("#big_dot").fadeIn();
         $("#nav_item").fadeIn();
+        $(".navbar-fixed-bottom").show();
     }
     else {
         $("#big_dot").fadeOut();
         $("#nav_item").fadeOut();
+        $(".navbar-fixed-bottom").hide();
     }
 }
 
@@ -165,7 +183,6 @@ function nav_inverse(flag) {
         $("#nav_logo > img").attr("src", "image/logo/logo-b.png");
         $("#nav_ham > img").attr("src", "image/icon/hamburger-b.png");
     }
-    forum_toggle(!flag);
 }
 
 function forum_toggle(flag) {
@@ -187,4 +204,8 @@ function hideElem(obj) {
 
 function showElem(obj) {
     $(obj).removeClass("hide-elem");
+}
+
+function join() {
+    bootbox.alert("报名成功！");
 }
