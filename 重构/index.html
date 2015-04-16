@@ -12,30 +12,55 @@
     <!-- 外部CSS -->
     <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="vendor/fullpage/css/jquery.fullPage.css">
+    <link rel="stylesheet" type="text/css" href="vendor/dragslideshow/css/dragdealer.css">
+    <link rel="stylesheet" type="text/css" href="vendor/dragslideshow/css/dragslideshow.css">
     <link rel="stylesheet" type="text/css" href="css/navitem.css">
+    <link rel="stylesheet" type="text/css" href="css/forum.css">
+    <link rel="stylesheet" type="text/css" href="css/history.css">
     <link rel="stylesheet" type="text/css" href="css/common.css">
 </head>
 
 <body>
+    <!-- 顶部导航 -->
     <div class="navbar-top navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><img src="image/logo/logo.png" /></a>
+                <a class="navbar-brand" href="/" id="nav_logo"><img src="image/logo/logo-w.png" /></a>
             </div>
-            <a class="navbar-brand navbar-right" href="#" id="nav_ham"><img src="image/icon/hamburger.png" /></a>
+            <ul class="navbar-brand navbar-right" id="nav_right">
+                <li>
+                    <a href="#" id="nav_search" class="hide-elem"><img src="image/icon/search-b.png" title="搜索" /></a>
+                </li>
+                <li>
+                    <a href="#" id="nav_login" class="hide-elem"><img src="image/icon/login-b.png" title="登录" /></a>
+                </li>
+                <li>
+                    <a href="#" id="nav_add" class="hide-elem"><img src="image/icon/add-b.png" title="发帖" /></a>
+                </li>
+                <li>
+                    <a href="#" id="nav_ham">
+                        <img src="image/icon/hamburger-w.png" title="导航" />
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
+    <!-- Launcher -->
     <div class="cover">
         <ul>
             <li><img src="image/logo/map.png" id="pic_map" title="地图" /><p>地图</p></li>
-            <li><img src="image/logo/zhou.png" id="pic_zhou" title="卷轴" /><p>卷轴</p></li>
+            <li><img src="image/logo/zhou.png" id="pic_zhou" title="历史" /><p>历史</p></li>
             <li><img src="image/logo/diy.png" id="pic_diy" title="DIY" /><p>DIY</p></li>
         </ul>
     </div>
+    <!-- Page -->
     <div class="page">
         <!-- 图片 -->
         <div class="section" id="sec_pic">
             <div class="slide" id="img1">
+                <div class="bg-image">
+                    <img src="image/background/pic_index.jpg" />
+                </div>
                 <div class="stage">
                     <h1>图片1</h1>
                 </div>
@@ -64,6 +89,9 @@
         <!-- 视频 -->
         <div class="section" id="sec_mov">
             <div class="slide" id="mov1">
+                <div class="bg-image">
+                    <img src="image/background/pic_map.jpg" />
+                </div>
                 <div class="stage">
                     <h1>视频1</h1>
                 </div>
@@ -89,8 +117,193 @@
                 </div>
             </div>
         </div>
-    </div>
+        <!-- 论坛 -->
+        <div class="section" id="sec_forum">
+            <div class="container">
+                <div class="section-forum section-baike">
+                    <h2>百科</h2>
+                    <div id="slide_baike" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#slide_baike" data-slide-to="0" class="active"></li>
+                            <li data-target="#slide_baike" data-slide-to="1"></li>
+                            <li data-target="#slide_baike" data-slide-to="2"></li>
+                            <li data-target="#slide_baike" data-slide-to="3"></li>
+                            <li data-target="#slide_baike" data-slide-to="4"></li>
+                            <li data-target="#slide_baike" data-slide-to="5"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <h2>皮影的起源在何时？</h2>
+                                <div>
+                                    一说是汉武帝刘彻的宠妃李夫人仙逝，武帝悲思不已。方士齐人少翁精心剪刻了李夫人的画像，晚上在一顶方帐中点起灯烛，映出宛如其人的影子。武帝在另一帐中远远望去，李夫人摇曳生姿，栩栩如生。《海阳竹枝词》把这个故事更鲜活地表述出来：“张灯作戏调翻新，顾囊徘徊知逼真。环佩姗姗连步稳，帐前活见李夫人。”
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h2>皮影的娱乐功能</h2>
+                                <div>
+                                    皮影戏的培植土壤在民间。它把一个重大的主题浅显化，把严肃的主题通俗化。《燕京岁时记》说：影戏的表演非常形象生动，情节曲折感人，唱到悲伤的时候，一些老妇人听了，往往都会情不自禁地泪流满面。说明皮影戏的感染力是很强的。皮影演出总是和乡村的生产、生活紧密地联系在一起。昼演木偶，夜唱皮影，也成为人们交流的因由与媒介。
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h2>皮影怎么拜师和学艺？</h2>
+                                <div>
+                                    拜师：先要签定协议，然后行拜师礼：师傅坐上首，学徒斟酒向师傅叩头行大礼。徒学跟从师傅学艺，主要还是靠实践出真知。从掌握乐器干起，最后才学掌签。谢师：学习期满，可以出师，摆酒谢师。一般是徒弟给师傅做一套衣服，师傅也还礼为念。如果是师傅器重的弟子，师傅可能送戏箱一个。徒弟向师傅叩头，为“谢师礼”。
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h2>皮影的起源在何时？</h2>
+                                <div>
+                                    一说是汉武帝刘彻的宠妃李夫人仙逝，武帝悲思不已。方士齐人少翁精心剪刻了李夫人的画像，晚上在一顶方帐中点起灯烛，映出宛如其人的影子。武帝在另一帐中远远望去，李夫人摇曳生姿，栩栩如生。《海阳竹枝词》把这个故事更鲜活地表述出来：“张灯作戏调翻新，顾囊徘徊知逼真。环佩姗姗连步稳，帐前活见李夫人。”于是有了帐后动影的艺术形式。
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h2>皮影向东南亚传播</h2>
+                                <div>
+                                    南宋宁宗嘉定时期，由于海上商业的原因，皮影戏由海路向东南亚诸国流传，到了爪哇（印度尼西亚）、暹罗（泰国）和马来西亚。马来亚、缅甸、柬埔寨、越南等国也都有过皮影戏，形式与爪哇、巴厘的影戏大同小异，可能是受爪哇影响而发展起来的。印度尼西亚的皮影戏，最初它是拜佛祭祖仪式的一部分，至今仍在演出前焚香祈祷。
+                                </div>
+                            </div>
+                            <div class="item">
+                                <h2>皮影向欧洲传播</h2>
+                                <div>
+                                    1767年法国一位名叫居阿罗德的传教士，开始是喜欢皮影戏的镂刻艺术，作为中国民间的工艺美术品带回去的。但他观摩了皮影戏演出的独特形式后，对皮影戏更感兴趣，于是就把皮影戏的整个操作方法和制作过程带回法国，成为法国一种时髦的外来艺术，1767年曾在巴黎剧场作过表演，并且在此基础上创造了法国的影戏。影戏到1776年又间接传入英国，被称为“中国影灯”。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img class="bg-img" src="image/forum/bg-baike.png" />
+                </div>
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="section-forum section-talk">
+                            <h2>闲聊</h2>
+                            <div class="talk-text"><p>“皮影到底有几种？”</p><p>112 回帖</p></div>
+                            <img class="bg-img" src="image/forum/bg-talk.png" />
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="section-forum section-veritcle">
+                            <div class="forum-title">
+                                <h2>专</h2>
+                                <h2>业</h2>
+                            </div>
+                            <img class="bg-img" src="image/forum/bg-profession.png" />
+                        </div>
+                    </div>
+                </div>
+                <div class="section-forum section-veritcle">
+                    <div class="forum-title">
+                        <h2>活</h2>
+                        <h2>动</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h2>皮影的基础认识</h2>
+                            <p>洪山区东湖公园<span class="pull-right">2015/4/13 12:00</span></p>
+                            <p>
+                                <button class="btn btn-primary">参加</button>
+                                <span class="pull-right">剩余3席</span>
+                            </p>
+                        </div>
+                        <div class="col-sm-3">
+                            <h2>皮影的基础认识</h2>
+                            <p>洪山区东湖公园<span class="pull-right">2015/4/13 12:00</span></p>
+                            <p>
+                                <button class="btn btn-primary">参加</button>
+                                <span class="pull-right">剩余3席</span>
+                            </p>
+                        </div>
+                        <div class="col-sm-3">
+                            <h2>皮影的基础认识</h2>
+                            <p>洪山区东湖公园<span class="pull-right">2015/4/13 12:00</span></p>
+                            <p>
+                                <button class="btn btn-primary">参加</button>
+                                <span class="pull-right">剩余3席</span>
+                            </p>
+                        </div>
+                        <img class="bg-img" src="image/forum/bg-activity.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 历史 -->
+        <div class="section" id="sec_history">
+            <div id="slide_history" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#slide_history" data-slide-to="0" class="active"></li>
+                    <li data-target="#slide_history" data-slide-to="1"></li>
+                    <li data-target="#slide_history" data-slide-to="2"></li>
+                    <li data-target="#slide_history" data-slide-to="3"></li>
+                    <li data-target="#slide_history" data-slide-to="4"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <img src="image/history/history-1.png" />
+                    </div>
+                    <div class="item">
+                        <img src="image/history/history-2.png" />
+                    </div>
+                    <div class="item">
+                        <img src="image/history/history-3.png" />
+                    </div>
+                    <div class="item">
+                        <img src="image/history/history-4.png" />
+                    </div>
+                    <div class="item">
+                        <img src="image/history/history-5.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- SlideShow -->
+    <div class="dragslider hide-elem" id="slideshow">
+        <section class="img-dragger dragdealer img-dragger-large">
+            <div class="handle">
+                <div class="slide current" data-content="content-1">
+                    <div class="img-wrap">
+                        <img class="main1" alt="img1" src="imgs/Pic-main-1.jpg">
+                    </div>
+                    <h2>Lorem Waldy<span>Distilling design ideas and other interesting topics</span></h2>
 
+                </div>
+                <div class="slide" data-content="content-2">
+                    <div class="img-wrap"><img class="main1" alt="img2" src="imgs/Pic-main-2.jpg"></div>
+                    <h2>Round Table <span>King Arthur's creative team techniques</span></h2>
+
+                </div>
+                <div class="slide" data-content="content-3">
+                    <div class="img-wrap"><img class="main1" alt="img3" src="imgs/Pic-main-3.jpg"></div>
+                    <h2>Taking Sneezes <span>Nothing is out there&mdash;let's try again</span></h2>
+
+                </div>
+                <div class="slide" data-content="content-4">
+                    <div class="img-wrap"><img class="main1" alt="img4" src="imgs/Pic-main-4.jpg"></div>
+                    <h2>Heavy Talks <span>Heated conversations in the back yard</span></h2>
+
+                </div>
+                <div class="slide" data-content="content-5">
+                    <div class="img-wrap"><img alt="img5" src="img/5.jpg"></div>
+                    <h2>Mountain Sun <span>Crazy nature and other weather ideas</span></h2>
+
+                </div>
+                <div class="slide" data-content="content-6">
+                    <div class="img-wrap"><img alt="img6" src="img/6.jpg"></div>
+                    <h2>Beloved Mother <span>Decomposing fruits and burning houses</span></h2>
+
+                </div>
+                <div class="slide" data-content="content-7">
+                    <div class="img-wrap"><img alt="img7" src="img/7.jpg"></div>
+                    <h2>Kale <i>&amp;</i> Karen <span>Only kale could make her happy</span></h2>
+
+                </div>
+                <div class="slide" data-content="content-8">
+                    <div class="img-wrap"><img alt="img8" src="img/8.jpg"></div>
+                    <h2>Happiness <span>On self-sufficient homes and pets</span></h2>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- 底部导航 -->
     <div class="navbar-bottom navbar navbar-default navbar-fixed-bottom">
         <div class="container">
             <div class="navbar-header">
@@ -111,10 +324,66 @@
             <a class="navbar-brand navbar-right" href="#" id="big_dot"><img src="image/icon/point_in.png" /></a>
         </div>
     </div>
+    <!-- 模态窗 -->
+    <div class="modal fade" role="dialog" id="publish">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title" id="myModalLabel">发表新帖</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">版块：</label>
+                            <div class="col-sm-9">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-default">
+                                        <input type="radio">闲聊
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio">专业
+                                    </label>
+                                    <label class="btn btn-default">
+                                        <input type="radio">活动
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">主题：</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" name="subject" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">内容：</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control" rows="5" name="content"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">发帖</button>
+                    <button type="button" class="btn" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 外部JS -->
     <script type="text/javascript" src="vendor/jquery/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="vendor/jquery/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="vendor/fullpage/js/jquery.fullPage.js"></script>
+    <script type="text/javascript" src="vendor/modernizr/modernizr.custom.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootbox.js"></script>
+
+    <!-- 导航JS -->
+    <script type="text/javascript" src="vendor/dragslideshow/js/classie.js"></script>
+    <script type="text/javascript" src="vendor/dragslideshow/js/dragdealer.js"></script>
+    <script type="text/javascript" src="vendor/dragslideshow/js/dragslideshow.js"></script>
 
     <!-- 页面JS -->
     <script type="text/javascript" src="js/main.js"></script>

@@ -1,0 +1,70 @@
+﻿#sec_forum, #sec_history {
+    background: transparent url(../image/texture.png);
+}
+
+.section-forum {
+    border: 3px solid #323232;
+    background-color: #f7f7f7;
+    height: 150px;
+    margin-bottom: 20px;
+    opacity: 0.6;
+    overflow: hidden;
+}
+
+.section-forum  h2 {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    color: #666;
+    font-size: 22px;
+    border-bottom: 3px solid #666;
+    position: absolute;
+}
+
+#slide_baike > .carousel-indicators {
+    bottom: -8px;
+}
+
+.section-veritcle > .forum-title {
+    margin: 20px;
+    width: 60px;
+    float: left
+}
+
+.section-veritcle > .forum-title > h2 {
+    margin: 0;
+    border-bottom: 0;
+    border-right: 3px solid #666;
+    position: relative;
+    width: 40px;
+}
+
+.section-veritcle > .forum-title > h2:first-child {
+    padding-top: 25px;
+}
+
+.section-veritcle > .forum-title > h2:last-child {
+    padding-top: 1px;
+    padding-bottom: 25px;
+}
+
+.section-forum > .row > div > h2 {
+    position: relative;
+    border-bottom: 0;
+    margin-left: 0;
+}
+
+.section-forum > .row > div > p > button {
+    width: 120px;
+}
+
+.talk-text {
+    margin-top: 70px;
+    margin-left: 20px;
+}
+
+.bg-img {
+    float: right;
+    position: absolute;
+}
