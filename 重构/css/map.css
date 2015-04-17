@@ -1,0 +1,69 @@
+﻿#sec_map .map {
+    position: relative;
+    left: 60px;
+    float: left;
+    cursor: pointer;
+    background: transparent url(../image/map/map.png) no-repeat center;
+}
+
+#sec_map .stage {
+    margin-top: 200px;
+    float: right;
+    width: 40%;
+    margin-right: 110px;
+}
+
+.stage img {
+    float: right;
+}
+
+.map-line {
+    height: 10px;
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAAFAQMAAADBmwYtAAAAA1BMVEUAAACnej3aAAAAAXRSTlMz/za5cAAAABRJREFUeF6VwIEAAAAAgKD9qWeoxAAtAAGmISXFAAAAAElFTkSuQmCC') repeat-x center top;
+    margin-top: 120px;
+}
+
+.map-content {
+    margin-top: 20px;
+}
+
+    .map-content > p {
+        font-size: 20px;
+        text-shadow: rgba(0, 0, 0, 0.6) 0 1px 2px;
+    }
+
+    .stage-hide {
+        margin-left: 1400px;
+        padding-top: 50px;
+        padding-right: 100px;
+        width: 700px;
+        float: right;
+        position: absolute;
+    }
+
+    .stage-image {
+        text-align: right;
+    }
+
+    #map_info {
+        padding-top: 20px;
+        height: 360px;
+        overflow-y: auto;
+        margin-right: 0;
+        float: left
+    }
+    .map-scroll {
+        float: right;
+    }
+
+    .map-scroll > ul > li {
+        list-style: none;
+    }
+
+    .map-scroll .map-dot {
+        margin-left: 30px;
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        background-color: #000;
+    }

@@ -2,15 +2,15 @@
 
     var current_page = 1;
     var current_z_index = 1;
+    var forum_index = 6;
 
     /* 初始化 FullPage */
     $(".page").fullpage({
-        anchors: ['pic', 'mov', 'history', 'forum'],
-        sectionsColor: ['#141414', '#141414', '#141414', '#141414'],
+        anchors: ['pic', 'mov', 'map', 'history', 'diy', 'forum'],
+        sectionsColor: ['#141414', '#141414', '#141414', '#141414', '#141414', '#141414'],
         css3: true,
         keyboardScrolling: false,
         animateAnchor: false,
-        scrollingSpeed: 0,
         afterLoad: function (anchorLink, index) {
             current_page = index;
             /* 左下角切换 */
@@ -21,18 +21,16 @@
                 $(".navbar-top").css("background", "none");
                 nav_toggle(false);
                 nav_inverse(false);
-                if (index == 4) forum_toggle(true);
+                if (index == forum_index) forum_toggle(true);
             }
         },
         onLeave: function (index, nextIndex, direction) {
             /* 导航切换 */
-            if (nextIndex < 4) {
                 if (nextIndex < 3) {
                     $(".navbar-top").css("background", "transparent url(../image/shadow.png) repeat-x center top");
                     nav_toggle(true);
                     nav_inverse(true);
-                }
-                forum_toggle(false);
+                if (nextIndex == forum_index) forum_toggle(false);
             }
         },
         afterSlideLoad: function (anchorLink, index, slideAnchor, slideIndex) {
@@ -61,7 +59,9 @@
     $(".nav-item").click(function () {
         var x = $(this).data("slide-x");
         var y = $(this).data("slide-y");
+        $.fn.fullpage.setScrollingSpeed(700);
         $.fn.fullpage.moveTo(y, x);
+        $.fn.fullpage.setScrollingSpeed(0);
     });
 
     /* 右下角点击效果 */
@@ -94,17 +94,17 @@
     /* 图片点击事件 */
     $("#pic_map").click(function () {
         $("#big_dot").click();
-        $.fn.fullpage.moveTo(2);
+        $.fn.fullpage.moveTo(3);
     });
 
     $("#pic_zhou").click(function () {
         $("#big_dot").click();
-        $.fn.fullpage.moveTo(3);
+        $.fn.fullpage.moveTo(4);
     });
 
     $("#pic_diy").click(function () {
         $("#big_dot").click();
-        $.fn.fullpage.moveTo(4);
+        $.fn.fullpage.moveTo(5);
     });
 
     /* 右上角导航点击事件 */
@@ -127,7 +127,7 @@
             $(".page").css("z-index", ++current_z_index);
             if (current_page > 2) nav_inverse(false);
             else nav_toggle(true);
-            if (current_page == 4) forum_toggle(true);
+            if (current_page == forum_index) forum_toggle(true);
         }
         ham_flag = !ham_flag;
     };
@@ -137,7 +137,7 @@
     });
 
     $("#nav_login").popover({
-        content: '<p><a href=""><img src="image/icon/qq.png" style="margin-left:20px;margin-right:50px" title="QQ"></a><a href=""><img src="image/icon/weibo.png" style="margin-right:20px" title="微博"></a></p>',
+        content: '<p><a href="javascript:login_qq();"><img src="image/icon/qq.png" style="margin-left:20px;margin-right:50px" title="QQ"></a><a href="javascript:login_weibo();"><img src="image/icon/weibo.png" style="margin-right:20px" title="微博"></a></p>',
         container: "body",
         title: "请用合作账号登录",
         html: true,
@@ -158,7 +158,17 @@
         });
         var obj = $("#slide_history > .carousel-indicators > .active > img");
         obj.animate({ "padding-bottom": "60px" }, 600).attr("src", obj.attr("src").split(".")[0] + "-hover.png");
-    })
+    });
+
+    $("#sec_map .map").click(function () {
+        $(".map").animate({ left: "-200px" }, { width: "1000px" }, { height: "1000px" });
+        $("#sec_map .stage").fadeOut();
+        $("#sec_map .stage-hide").animate({"margin-left": "660px"});
+    });
+
+    $("video").click(function () {
+        this.play();
+    });
 });
 
 function nav_toggle(flag) {
@@ -207,5 +217,27 @@ function showElem(obj) {
 }
 
 function join() {
-    bootbox.alert("报名成功！");
+    bootbox.alert("请先登录！");
 }
+
+function login_qq() {
+    showDialog("通过QQ登录", "http://openapi.qzone.qq.com/oauth/show?which=ConfirmPage&display=pc&response_type=code&client_id=101209882&redirect_uri=http://www.wutnews.net/");
+}
+
+function login_weibo() {
+    showDialog("通过微博登录", "https://api.weibo.com/oauth2/authorize?client_id=1111745214&response_type=code&redirect_uri=http://www.wutnews.net");
+}
+
+function showDialog(title, url) {
+    bootbox.dialog({
+        title: title,
+        message: "<iframe src=\"" + url + "\" align=\"center\" frameborder=\"0\" width=\"100%\" height=\"330px\" oncontextmenu=\"window.event.returnvalue=false\" scrolling=\"no\">你的浏览器不支持内嵌框架，请直接访问 " + url + "</iframe>",
+        buttons: {
+            cancel: {
+                label: "关闭",
+                className: "btn-primary"
+            }
+        }
+    });
+}
+

@@ -1,4 +1,4 @@
-﻿#sec_forum, #sec_history {
+﻿#sec_forum, #sec_history, #sec_diy, #sec_map {
     background: transparent url(../image/texture.png);
 }
 
@@ -95,7 +95,7 @@
 }
 
 .section-forum:hover {
-    background-color: #CC6;
+    background-color: #afafaf;
 }
 
 .bg-img-profession {

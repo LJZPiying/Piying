@@ -26,6 +26,7 @@
     border-radius: 0;
     background: none;
     text-indent: 0;
+    cursor: pointer;
 }
 
 #slide_history .carousel-caption {

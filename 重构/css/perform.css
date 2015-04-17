@@ -1,0 +1,248 @@
+.bgpic img {
+    width: calc(100% + 0.2px);
+    height: calc(100% + 0.2px);
+    position: absolute;
+    z-index: -1;
+}
+
+#header {
+    width: 100%-30px;
+    height: 32px;
+    padding: 30px 80px 30px 60px;
+}
+
+#img_share {
+    float: right;
+}
+
+#sec_diy > .stage {
+    padding: 0;
+    width: 50%;
+    float: left;
+    margin-top: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
+    cursor: url('imgs/Dgn1_Vnd.cur');
+    height: 80%;
+    top: 90%;
+    
+}
+
+#player1 {
+    width: 210px;
+    float: left;
+    margin-right:50px;
+}
+
+#player2 {
+    width: 200px;
+    float: right;
+    margin-left:30px;
+}
+
+#piying1 {
+    padding: 0;
+    width: 50%;
+    float: left;
+    margin-top: 20px;
+    margin-left: 25%;
+    margin-right: 25%;
+    cursor: url('imgs/Dgn1_Vnd.cur');
+    height: 400px;
+    top: 90%;
+    display: none;
+}
+
+#player3 {
+    width: 250px;
+    float: left;
+    margin-right:50px;
+    display:none;
+}
+
+#player1_left_hand {
+    float: left;
+    width: 150px;
+    height: 290px;
+    padding-top: 130px;
+    overflow: hidden;
+    margin-right: -100px;
+}
+
+#img1_left_hand {
+    float: left;
+    margin-right: -5px;
+    padding-top:10px;
+}
+
+#player1_bodies {
+    float: left;
+    width: 100px;
+}
+
+#player1_right_hand {
+    float: left;
+    width: 100px;
+    padding-top: 150px;
+    overflow: hidden;
+    height:300px;
+}
+
+#img1_right_hand {
+    float: right;
+}
+
+#player1_left_foot {
+    float: left;
+    padding-top:40px;
+    height: 200px;
+    margin-top: -200px;
+    width: 120px;
+    overflow: hidden;
+}
+
+#img2_left_foot {
+    margin-top: -60px;
+    float: right;
+}
+
+#player4 {
+    width: 300px;
+    float: right;
+    display:none;
+}
+
+#player2_bodies {
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+
+#img3_bodies {
+    float: left;
+}
+
+#player2_right_hand {
+    float: left;
+    width: 150px;
+    overflow: hidden;
+    padding-top: 20px ;
+    height:320px;
+}
+
+#img3_right_hand {
+    float: right;
+    
+}
+
+#player2_left_foot {
+    float: left;
+    width: 130px;
+    height: 150px;
+    overflow: hidden;
+}
+
+#img3_left_foot {
+    margin-top: -100px;
+}
+
+#bodies {
+    float: left;
+    z-index: 2;
+    width: 50%;
+    height: 330px;
+}
+
+#img1_bodies {
+    float: left;
+    display: block;
+}
+
+#img1_hand {
+    float: right;
+    margin-left: -20px;
+}
+
+#hand {
+    height: 310px;
+    float: right;
+    overflow: hidden;
+    cursor: url('imgs/Dgn1_Vnd.cur');
+    padding-top: 180px;
+    z-index: 1000;
+    width: 47%;
+    padding-right: 6px;
+}
+
+#left_foot {
+    float: left;
+    overflow: hidden;
+    z-index: 1000;
+    width: 50.1%;
+}
+
+#right_foot {
+    float: left;
+    overflow: hidden;
+    z-index: 2000;
+    width: 49.9%;
+}
+
+#img1_left_foot {
+    margin-top: -70px;
+    float: right;
+}
+
+#img1_right_foot {
+    margin-top: -65px;
+    float: left;
+}
+
+#bodies2 {
+    float: right;
+    width: 100px;
+}
+
+#img2_bodies {
+    float: right;
+}
+
+#hand2 {
+    float: left;
+    width: 100px;
+    overflow: hidden;
+    padding-top: 150px;
+}
+
+#img2_hand {
+    float: left;
+}
+
+
+
+.fixed-bottom {
+    margin-left:150px;
+    position:absolute;
+    width: 100%;
+    height:150px;
+}
+.circle-1,.circle-2,.circle-3,.circle-4{float:left;
+                                        margin-left:100px;
+                                        margin-top:460px;
+                                        cursor:pointer;
+                                       
+}
+.fixed-bottom > ul {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.fixed-bottom > ul > li {
+    float: left;
+    list-style: none;
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+
+    
+}
